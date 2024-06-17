@@ -1,0 +1,51 @@
+{
+  "name": "natours_api",
+  "version": "1.0.0",
+  "main": "app.js",
+  "targets": {
+    "main": false
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run build && npm run start-server",
+    "start:prod": "NODE_ENV=production nodemon server.js",
+    "debug": "ndb server.js",
+    "build": "parcel build ./public/js/index.js --dist-dir ./public/js/bundled",
+    "watch:js": "parcel serve ./public/js/index.js --dist-dir ./public/js/bundled",
+    "start-server": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/polyfill": "^7.12.1",
+    "axios": "^1.6.8",
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.4.5",
+    "express": "^4.18.3",
+    "express-mongo-sanitize": "^2.2.0",
+    "express-rate-limit": "^7.2.0",
+    "helmet": "3.16",
+    "hpp": "^0.2.3",
+    "html-to-text": "^9.0.5",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^5.13.22",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "nodemailer": "^6.9.12",
+    "pug": "^3.0.2",
+    "sharp": "^0.33.3",
+    "slugify": "^1.6.6",
+    "stripe": "^14.23.0",
+    "validator": "^13.11.0",
+    "xss-clean": "^0.1.4"
+  },
+  "description": "",
+  "devDependencies": {
+    "buffer": "^6.0.3",
+    "concurrently": "^8.2.2",
+    "npm-run-all": "^4.1.5",
+    "parcel": "^2.12.0"
+  }
+}
