@@ -7,8 +7,8 @@ export const updateSettings = async (data, type) => {
     try {
         const url =
             type === 'password'
-                ? 'http://localhost:3000/api/v1/users/updateMyPassword'
-                : 'http://localhost:3000/api/v1/users/updateMe';
+                ? '/api/v1/users/updateMyPassword'
+                : '/api/v1/users/updateMe';
 
         const res = await axios({
             method: 'PATCH',
@@ -28,7 +28,7 @@ export const forgetPassword = async (email) => {
     try {
         const res = await axios({
             method: "POST",
-            url: "http://localhost:3000/api/v1/users/forgotPasswordRender",
+            url: "/api/v1/users/forgotPasswordRender",
             data: {
                 email
             }
@@ -50,7 +50,7 @@ export const resetPassword = async (passData, token) => {
     try {
         const res = await axios({
             method: "PATCH",
-            url: `http://localhost:3000/api/v1/users/resetPassword/${token}`,
+            url: `/api/v1/users/resetPassword/${token}`,
             data: { ...passData }
         })
         if (res.data.status === "success") {
@@ -71,7 +71,7 @@ export const postReview = async (reviewObj) => {
     try {
         const res = await axios({
             method: "POST",
-            url: `http://localhost:3000/api/v1/tours/${reviewObj.tourId}/reviews`,
+            url: `/api/v1/tours/${reviewObj.tourId}/reviews`,
             data: {
                 review: reviewObj.review,
                 rating: reviewObj.rating
